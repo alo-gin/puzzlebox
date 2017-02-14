@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/tick.js"></script>
+    <script src="js/support.js"></script>
+    <script src="js/puzzle.js"></script>
+    <script src="js/timer.js"></script>
+    <script>
+      var puzzles = ["castle", "tree", "troll"];
+      
+      function init() {
+        tick();
+        
+        timer_tick([0]);
+        
+        puzzle_init();
+        puzzle_load(puzzles[getRandomInt(0, 2)]);
+        puzzle_scramble(100);
+      }
+    </script>
+  </head>
+  <body onload="init()">
+    <div id="puzzle"></div>
+    <div id="timer"></div>
+  </body>
+</html>
